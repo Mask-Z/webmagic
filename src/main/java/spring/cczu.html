@@ -1,0 +1,513 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+    常州大学教务管理信息系统
+</title>
+    <link rel="stylesheet" rev="stylesheet" type="text/css" media="all" href="css/main2.css"/>
+    <script type="text/javascript" src="script/jquery-1.4.3.min.js"></script>
+    <script type="text/javascript" src="script/jquery.iframe-auto-height.plugin.js"></script>
+    <script type="text/javascript" src="js/htmlfive.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".clum").click(function () {
+                $(this).toggleClass("open");
+                $(".leftbar").toggleClass("close");
+            });
+        });
+
+
+    </script>
+
+
+    <script type="text/javascript" src="script/DD_belatedPNG.js"></script>
+    <script>
+        DD_belatedPNG.fix('.header,.copyright, img');
+    </script>
+
+</head>
+<body>
+<form name="form1" method="post" action="index3.aspx" id="form1">
+    <div>
+        <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value=""/>
+        <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value=""/>
+        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+               value="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"/>
+    </div>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        var theForm = document.forms['form1'];
+        if (!theForm) {
+            theForm = document.form1;
+        }
+        function __doPostBack(eventTarget, eventArgument) {
+            if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                theForm.__EVENTTARGET.value = eventTarget;
+                theForm.__EVENTARGUMENT.value = eventArgument;
+                theForm.submit();
+            }
+        }
+        //]]>
+    </script>
+
+
+    <script src="/WebResource.axd?d=5d5KGRMAyLvBqg6D0Z6Xhj3Bik0iH8Qt5h7ZqLwbqRWMcG_QNGx9uHHYTzhIEQhPxWH_P8u88WPt72kX0&amp;t=635588906575142005"
+            type="text/javascript"></script>
+
+
+    <script src="/ScriptResource.axd?d=edPYTvPbB2z28g5_A_RuNoxa2FPsgUiri7qk28A78NbZbpWa-nXIXnLRue6V2pDAJWxlvEl_odT_znOuUEpXNnZUXayL7t7HNrrHRg-qvBNSgO_1COZNuKhq8LcN2BMya6rgyPsKiGWT_KjBBE-vpX_ka6mpQGrIlbANgg2&amp;t=635789889199215076"
+            type="text/javascript"></script>
+    <script src="/ScriptResource.axd?d=CHYqXPpXhSVnbPqY_DAtlNDFBk2Qrspi3k-XYM5DiKWkaSGVBZiKHEm4YBrRnsO3kbdruLusMRixcj6ecoIUuREJbfIwJZjIe37dUN72EPEsGh1dwklv-j5Hn2paUtdBbuysrLIsh_MSJ_-LUjYDLtIVPe4czeDQU8h2yQ9yqFbRoaIV0&amp;t=635789889199215076"
+            type="text/javascript"></script>
+    <div>
+
+        <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="51E093D1"/>
+        <input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value=""/>
+    </div>
+    <div class="top">
+        <script type="text/javascript">
+            //<![CDATA[
+            Sys.WebForms.PageRequestManager._initialize('ScriptManager1', document.getElementById('form1'));
+            Sys.WebForms.PageRequestManager.getInstance()._updateControls(['tUpdatePanel1', 'tUpdatePanel5', 'tUpdatePanel3', 'tUpdatePanel2', 'tUpdatePanel4'], [], [], 90);
+            //]]>
+        </script>
+
+        <div class="left">当前用户： 周云龙 <a href="web_szgl/szgl_jsxx_grsb_wh.aspx" target="main">个人信息维护</a><span> | </span>
+        </div>
+        <div class="left">
+            <table cellspacing="0" border="0" id="FormView1" style="border-collapse:collapse;">
+                <tr>
+                    <td colspan="2">
+                        今天是星期二2016年11月15日
+                        16-17-1 学期|第11周
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="right"><a href="http://jwc.cczu.edu.cn/">教务处首页</a><span>|</span><a href="http://www.cczu.edu.cn/">常大主页</a><span>|</span><a
+                href="index_top/updatepassword.aspx" target="MainFrame">密码修改</a><span>|</span><a
+                href="http://jwcas.cczu.edu.cn">返回旧版</a><span>|</span><a href="javascript:window.close()" target="_top">退出</a>
+        </div>
+    </div>
+    <div class="header">
+        <h1><a title="教务管理信息系统" href="#"><img src="images/logo2.png" alt="教务管理信息系统"/></a></h1>
+        <h2><img src="images/ad.png" alt="教务管理信息系统"/></h2>
+    </div>
+
+    <div class="list">
+        <dl>
+            <dt><a href="http://219.230.159.132/every_main.aspx" target="_blank">常用查询</a></dt>
+            <dt><a href="officetable6.aspx" target="main">新闻通知</a></dt>
+            <dd>
+                <div id="UpdatePanel1">
+
+
+                </div>
+
+            </dd>
+        </dl>
+    </div>
+
+    <div class="mainbox">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" id="table01">
+            <tr>
+                <td valign="top" class="leftbar">
+                    <div class="leftmenu">
+
+                        <dl>
+                            <dt>
+                            <div id="UpdatePanel5">
+
+                                <a id="LinkButton1" href="javascript:__doPostBack('LinkButton1','')"
+                                   style="color:#C00000;font-size:11pt;">本人常用功能</a>
+
+                            </div>
+                            </dt>
+                            <dd>
+                                <div id="UpdatePanel3">
+
+                                    <table id="DataList1" cellspacing="0" cellpadding="0" rules="cols" border="0"
+                                           style="background-color:White;border-width:0px;border-style:None;width:100%;border-collapse:collapse;">
+                                        <tr>
+                                            <td style="color:Black;background-color:#EEEEEE;">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td style="width: 10%; height: 19px">
+                                                            <img id="DataList1_ctl00_Image3" src="images/arrow6.gif"
+                                                                 style="height:16px;width:16px;border-width:0px;"/></td>
+                                                        <td style="width: 90%; height: 19px">
+                                                            <a id="DataList1_ctl00_HyperLink1"
+                                                               href="web_jxjh/jxjh_cx.aspx" target="main">培养方案</a></td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:Black;background-color:#EEEEEE;">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td style="width: 10%; height: 19px">
+                                                            <img id="DataList1_ctl01_Image3" src="images/arrow6.gif"
+                                                                 style="height:16px;width:16px;border-width:0px;"/></td>
+                                                        <td style="width: 90%; height: 19px">
+                                                            <a id="DataList1_ctl01_HyperLink1"
+                                                               href="web_jxrw/cx_kb_xsgrkb.aspx"
+                                                               target="main">学分制选课课表</a></td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:Black;background-color:#EEEEEE;">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td style="width: 10%; height: 19px">
+                                                            <img id="DataList1_ctl02_Image3" src="images/arrow6.gif"
+                                                                 style="height:16px;width:16px;border-width:0px;"/></td>
+                                                        <td style="width: 90%; height: 19px">
+                                                            <a id="DataList1_ctl02_HyperLink1"
+                                                               href="web_cjgl/cx_cj_jxjhcj_xh.aspx" target="main">培养方案对照成绩</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:Black;background-color:#EEEEEE;">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td style="width: 10%; height: 19px">
+                                                            <img id="DataList1_ctl03_Image3" src="images/arrow6.gif"
+                                                                 style="height:16px;width:16px;border-width:0px;"/></td>
+                                                        <td style="width: 90%; height: 19px">
+                                                            <a id="DataList1_ctl03_HyperLink1"
+                                                               href="web_cjgl/cx_cj_xh.aspx" target="main">学生所学实际成绩</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:Black;background-color:#EEEEEE;">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td style="width: 10%; height: 19px">
+                                                            <img id="DataList1_ctl04_Image3" src="images/arrow6.gif"
+                                                                 style="height:16px;width:16px;border-width:0px;"/></td>
+                                                        <td style="width: 90%; height: 19px">
+                                                            <a id="DataList1_ctl04_HyperLink1"
+                                                               href="web_cjgl/cx_xjsh_xs_new.aspx" target="main">学生学籍审核成绩信息</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:Black;background-color:#EEEEEE;">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td style="width: 10%; height: 19px">
+                                                            <img id="DataList1_ctl05_Image3" src="images/arrow6.gif"
+                                                                 style="height:16px;width:16px;border-width:0px;"/></td>
+                                                        <td style="width: 90%; height: 19px">
+                                                            <a id="DataList1_ctl05_HyperLink1"
+                                                               href="web_cjgl/cx_cetjsj_xscj_xh.aspx" target="main">等级考试成绩</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:Black;background-color:#EEEEEE;">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td style="width: 10%; height: 19px">
+                                                            <img id="DataList1_ctl06_Image3" src="images/arrow6.gif"
+                                                                 style="height:16px;width:16px;border-width:0px;"/></td>
+                                                        <td style="width: 90%; height: 19px">
+                                                            <a id="DataList1_ctl06_HyperLink1"
+                                                               href="web_xjgl/xjgl_wh_tj_xsxx_jj.aspx" target="main">学生个人信息</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:Black;background-color:#EEEEEE;">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td style="width: 10%; height: 19px">
+                                                            <img id="DataList1_ctl07_Image3" src="images/arrow6.gif"
+                                                                 style="height:16px;width:16px;border-width:0px;"/></td>
+                                                        <td style="width: 90%; height: 19px">
+                                                            <a id="DataList1_ctl07_HyperLink1"
+                                                               href="web_xsxk/ksbm_xkfs_xs.aspx" target="main">学生报名</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:Black;background-color:#EEEEEE;">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td style="width: 10%; height: 19px">
+                                                            <img id="DataList1_ctl08_Image3" src="images/arrow6.gif"
+                                                                 style="height:16px;width:16px;border-width:0px;"/></td>
+                                                        <td style="width: 90%; height: 19px">
+                                                            <a id="DataList1_ctl08_HyperLink1"
+                                                               href="web_xsxk/cx_ggxx_xsfs_new.aspx" target="main">学生选课信息查询</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:Black;background-color:#EEEEEE;">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td style="width: 10%; height: 19px">
+                                                            <img id="DataList1_ctl09_Image3" src="images/arrow6.gif"
+                                                                 style="height:16px;width:16px;border-width:0px;"/></td>
+                                                        <td style="width: 90%; height: 19px">
+                                                            <a id="DataList1_ctl09_HyperLink1"
+                                                               href="web_jxpj/jxpj_zxajs.aspx"
+                                                               target="main">评选我最喜爱教师</a></td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:Black;background-color:#EEEEEE;">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td style="width: 10%; height: 19px">
+                                                            <img id="DataList1_ctl10_Image3" src="images/arrow6.gif"
+                                                                 style="height:16px;width:16px;border-width:0px;"/></td>
+                                                        <td style="width: 90%; height: 19px">
+                                                            <a id="DataList1_ctl10_HyperLink1"
+                                                               href="web_jxpj/web_wjdc_logo.aspx"
+                                                               target="main">学生问卷调查</a></td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:Black;background-color:#EEEEEE;">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td style="width: 10%; height: 19px">
+                                                            <img id="DataList1_ctl11_Image3" src="images/arrow6.gif"
+                                                                 style="height:16px;width:16px;border-width:0px;"/></td>
+                                                        <td style="width: 90%; height: 19px">
+                                                            <a id="DataList1_ctl11_HyperLink1"
+                                                               href="web_ksgl/ksgl_ksapcx_xhfs.aspx" target="main">考试安排日程查询</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:Black;background-color:#EEEEEE;">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td style="width: 10%; height: 19px">
+                                                            <img id="DataList1_ctl12_Image3" src="images/arrow6.gif"
+                                                                 style="height:16px;width:16px;border-width:0px;"/></td>
+                                                        <td style="width: 90%; height: 19px">
+                                                            <a id="DataList1_ctl12_HyperLink1"
+                                                               href="web_jxrw/kbgl_dktj_xs.aspx"
+                                                               target="main">调课信息查询</a></td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:Black;background-color:#EEEEEE;">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td style="width: 10%; height: 19px">
+                                                            <img id="DataList1_ctl13_Image3" src="images/arrow6.gif"
+                                                                 style="height:16px;width:16px;border-width:0px;"/></td>
+                                                        <td style="width: 90%; height: 19px">
+                                                            <a id="DataList1_ctl13_HyperLink1"
+                                                               href="web_cwsf/web_cwsf_xjbd_xs.aspx" target="main">学生缴费注册信息查询</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:Black;background-color:#EEEEEE;">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td style="width: 10%; height: 19px">
+                                                            <img id="DataList1_ctl14_Image3" src="images/arrow6.gif"
+                                                                 style="height:16px;width:16px;border-width:0px;"/></td>
+                                                        <td style="width: 90%; height: 19px">
+                                                            <a id="DataList1_ctl14_HyperLink1"
+                                                               href="web_xx/web_xxdj_xs.aspx" target="main">学生手机信息登记</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:Black;background-color:#EEEEEE;">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td style="width: 10%; height: 19px">
+                                                            <img id="DataList1_ctl15_Image3" src="images/arrow6.gif"
+                                                                 style="height:16px;width:16px;border-width:0px;"/></td>
+                                                        <td style="width: 90%; height: 19px">
+                                                            <a id="DataList1_ctl15_HyperLink1"
+                                                               href="web_xm/oa_xmmx_sq_xs.aspx" target="main">网上项目申请</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:Black;background-color:#EEEEEE;">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td style="width: 10%; height: 19px">
+                                                            <img id="DataList1_ctl16_Image3" src="images/arrow6.gif"
+                                                                 style="height:16px;width:16px;border-width:0px;"/></td>
+                                                        <td style="width: 90%; height: 19px">
+                                                            <a id="DataList1_ctl16_HyperLink1"
+                                                               href="web_xm/oa_bmgz_cx.aspx"
+                                                               target="main">日常工作办事流程查询</a></td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:Black;background-color:#EEEEEE;">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td style="width: 10%; height: 19px">
+                                                            <img id="DataList1_ctl17_Image3" src="images/arrow6.gif"
+                                                                 style="height:16px;width:16px;border-width:0px;"/></td>
+                                                        <td style="width: 90%; height: 19px">
+                                                            <a id="DataList1_ctl17_HyperLink1"
+                                                               href="web_sjjx/web_sjjx_sy_gnxz_xs.aspx" target="main">查询实验实践教学安排</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:Black;background-color:#EEEEEE;">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td style="width: 10%; height: 19px">
+                                                            <img id="DataList1_ctl18_Image3" src="images/arrow6.gif"
+                                                                 style="height:16px;width:16px;border-width:0px;"/></td>
+                                                        <td style="width: 90%; height: 19px">
+                                                            <a id="DataList1_ctl18_HyperLink1"
+                                                               href="web_xszz/zzgl_jtqkdj.aspx"
+                                                               target="main">家庭经济困难学生登记</a></td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:Black;background-color:#EEEEEE;">
+                                                <table style="width: 100%">
+                                                    <tr>
+                                                        <td style="width: 10%; height: 19px">
+                                                            <img id="DataList1_ctl19_Image3" src="images/arrow6.gif"
+                                                                 style="height:16px;width:16px;border-width:0px;"/></td>
+                                                        <td style="width: 90%; height: 19px">
+                                                            <a id="DataList1_ctl19_HyperLink1"
+                                                               href="web_xszz/web_cwsf_tf.aspx" target="main">退费申请及银行卡号变更</a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                </div>
+                            </dd>
+
+                        </dl>
+
+                        <dl>
+                            <dd>
+                                <div id="UpdatePanel2">
+
+
+                                </div>
+                            </dd>
+                            <dd>
+                                <div id="UpdatePanel4">
+
+
+                                </div>
+                            </dd>
+                        </dl>
+
+
+                    </div>
+                </td>
+                <td valign="top" class="clickbar">
+                    <div class="clum"><a href="#" class="click_a"></a></div>
+                </td>
+                <td valign="top">
+                    <div class="mainright">
+                        <iframe name="main" src="officetable6.aspx" scrolling="no" frameborder="0" width="100%"
+                                id="IFRAME1"></iframe>
+
+                        <iframe name="main" scrolling="no" frameborder="0" width="100%" id="IFRAME2"></iframe>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <div class="clr"></div>
+    </div>
+    <div class="copyright">
+        <p>Copyright &copy; 2012 常州大学教务处 All rights reserved.<br/>
+            地址：江苏省常州市科教城常州大学文正楼112<span>电话：0519-86330182</span><br/>
+            Designer：教务处学籍管理中心</p>
+    </div>
+
+    <script type="text/javascript">
+        // match all iframes / use jQuery or alias $
+        jQuery('iframe').iframeAutoHeight();
+
+    </script>
+
+
+    <script type="text/javascript">
+        //<![CDATA[
+        Sys.Application.initialize();
+        //]]>
+    </script>
+</form>
+</body>
+</html>
