@@ -1,5 +1,8 @@
 package summer;
 
+import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.io.output.*;
+import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.apache.http.annotation.ThreadSafe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,39 +10,86 @@ import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Task;
 import us.codecraft.webmagic.pipeline.FilePipeline;
 import us.codecraft.webmagic.pipeline.Pipeline;
+import us.codecraft.webmagic.utils.FilePersistentBase;
 
-import java.io.File;
+import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Iterator;
+import java.util.Map;
+
+import static us.codecraft.webmagic.utils.FilePersistentBase.PATH_SEPERATOR;
 
 /**
  * Created by Mr丶周 on 2016/11/16.
  */
 @ThreadSafe
-public class ImgPipeline extends FilePipeline implements Pipeline{
-	private Logger logger = LoggerFactory.getLogger(getClass());
-	private static int count=0;
+public class ImgPipeline extends FilePersistentBase implements Pipeline{
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+
 	public ImgPipeline() {
-		setPath("/data/webmagic/");
+		this.setPath("/data/webmagic/");
 	}
 
 	public ImgPipeline(String path) {
-		setPath(path);
+		this.setPath(path);
 	}
 
-
-	@Override
 	public void process(ResultItems resultItems, Task task) {
+		String path = this.path + PATH_SEPERATOR + task.getUUID() + PATH_SEPERATOR;
 
-			String imageStr = resultItems.get("imageStr");
-			String bianhao = resultItems.get("bianhao");
-			String url = resultItems.get("url");
-			String path = this.path + task.getUUID() + "/";
-			String path2 = path + count++;//U2F.convert(bianhao, url);
-			path2 = path2.substring(0, path2.lastIndexOf("/")) + File.separator;
-			checkAndMakeParentDirecotry(path2);
-			boolean saveSucess = ImageBase64Utils.GenerateImage(path, count++ +"", imageStr);
-			if (saveSucess) {
-				System.out.println("==================================成功");
+		String imgName=DigestUtils.md5Hex(resultItems.getRequest().getUrl())+".jpg";
+		String imgUrl=resultItems.getRequest().getUrl();
+//		try {
+//			writeImg(imgName,imgUrl);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 
-		}
+//		try {
+//			PrintWriter e = new PrintWriter(new OutputStreamWriter(new FileOutputStream(this.getFile(path + DigestUtils.md5Hex(resultItems.getRequest().getUrl()) + ".html")), "UTF-8"));
+//			e.println("imgUrl:\t" + resultItems.getRequest().getUrl());
+//			Iterator i$ = resultItems.getAll().entrySet().iterator();
+//
+//			while(true) {
+//				while(i$.hasNext()) {
+//					Map.Entry entry = (Map.Entry)i$.next();
+//					if(entry.getValue() instanceof Iterable) {
+//						Iterable value = (Iterable)entry.getValue();
+//						e.println((String)entry.getKey() + ":");
+//						Iterator i$1 = value.iterator();
+//
+//						while(i$1.hasNext()) {
+//							Object o = i$1.next();
+//							e.println(o);
+//						}
+//					} else {
+//						e.println((String)entry.getKey() + ":\t" + entry.getValue());
+//					}
+//				}
+//
+//				e.close();
+//				break;
+//			}
+//		} catch (IOException var10) {
+//			this.logger.warn("write file error", var10);
+//		}
+
 	}
+
+//	public void writeImg(String imgName,String imgUrl) throws IOException {
+//	//	String str="";
+//		URL url=new URL(imgUrl);
+//		DataInputStream dataInputStream=new DataInputStream(url.openStream());
+//		//String path="";
+//		FileOutputStream fileOutputStream=new FileOutputStream(imgName);
+//
+//		byte[] data=new byte[1024];
+//		int length;
+//		while ((length=dataInputStream.read(data))>0){
+//			fileOutputStream.write(data,0,length);
+//		}
+//		dataInputStream.close();
+//		fileOutputStream.close();
+//	}
 }
