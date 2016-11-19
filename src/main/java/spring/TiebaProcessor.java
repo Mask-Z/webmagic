@@ -1,34 +1,25 @@
 package spring;
 
-import summer.ImgPipeline;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.pipeline.ConsolePipeline;
-import us.codecraft.webmagic.pipeline.FilePipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
 
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.URL;
 import java.util.List;
 
-import static com.google.common.collect.Range.all;
-import static spring.AniMusicProcessor.URL_LIST;
-import static spring.AniMusicProcessor.URL_POST;
-import static us.codecraft.webmagic.selector.Selectors.regex;
+import static summer.ImageDownloader.writeImg;
 
 /**
  * Created by Mr丶周 on 2016/11/16.
  */
 public class TiebaProcessor implements PageProcessor {
 	private Site site = Site.me().setSleepTime(1000).setRetryTimes(3);
-private static int count=0;
+	private static int count = 0;
 	//列表页的正则表达式  http://tieba.baidu.com/p/3466236659?pn=2
 	public static final String URL_LIST2 = "http://tieba\\.baidu\\.com/p/3466236659\\?pn=\\d*";
-//	//详情页的正则表达式http://imgsrc.baidu.com/forum/w%3D580/sign=1b51bd882b381f309e198da199004c67/97224f4a20a446238c892ad29b22720e0df3d7c4.jpg
+	//	//详情页的正则表达式http://imgsrc.baidu.com/forum/w%3D580/sign=1b51bd882b381f309e198da199004c67/97224f4a20a446238c892ad29b22720e0df3d7c4.jpg
 	public static final String URL_PIC = "http://imgsrc\\.baidu\\.com/forum/\\.*";
 
 
@@ -54,13 +45,13 @@ private static int count=0;
 //			String title = page.getHtml().xpath("//div[@class='location']").regex("\\[[\\S|\\s]+\\<").toString();    //匹配标题
 //			page.putField("title", title.substring(0, title.length() - 1).trim());
 //			page.putField("torrent", page.getHtml().xpath("//p[@class='original download']").links().toString().trim());    //匹配种子
-			String urll=page.getUrl().toString();
+			String urll = page.getUrl().toString();
 			try {
-				writeImg((count++)+"",urll);
+				writeImg((count++) + "", urll);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			page.putField("URL",urll);
+			page.putField("URL", urll);
 			System.out.println();
 		}
 	}
@@ -74,19 +65,5 @@ private static int count=0;
 				.run();
 	}
 
-	public void writeImg(String imgName,String imgUrl) throws IOException {
 
-		URL url=new URL(imgUrl);
-		DataInputStream dataInputStream=new DataInputStream(url.openStream());
-		//String path="";
-		FileOutputStream fileOutputStream=new FileOutputStream(new File("D:\\webmagic\\tiebapic\\"+imgName+".jpg"));
-
-		byte[] data=new byte[1024];
-		int length;
-		while ((length=dataInputStream.read(data))>0){
-			fileOutputStream.write(data,0,length);
-		}
-		dataInputStream.close();
-		fileOutputStream.close();
-	}
 }
